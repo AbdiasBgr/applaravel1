@@ -1,5 +1,6 @@
 <?php
-use App\Http\Controllers\homeController;
+
+use App\Http\Controllers\etudiantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [homeController::class, 'home1'])->name('home');
-Route::get('/liste', [homeController::class, 'liste1'])->name('liste');
+Route::get('/etudiant', [etudiantController::class, 'liste_etudiant'])->name('etudiant');
+
+
+Route::get('/ajouter', [etudiantController::class, 'ajouter_etudiant'])->name('ajoutetudiant');
+
+Route::post('/ajouter/traitement', [etudiantController::class, 'ajouter_etudiant_traitement'])->name('ajoutetudianttraitement');
+
+Route::get('/modifier-etudiant/{id}', [etudiantController::class, 'modifier_etudiant'])->name('modifieretudiant');
+
+Route::post('/modifier/traitement', [etudiantController::class, 'modifier_etudiant_traitement'])->name('modifieretudianttraitement');
+
+Route::get('/supprimer-etudiant/{id}', [etudiantController::class, 'supprimer_etudiant'])->name('supprimeretudiant');
