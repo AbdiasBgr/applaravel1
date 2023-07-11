@@ -10,10 +10,15 @@
             background-color: blue;
             color: whitesmoke;
             border-radius: 10px;
+            margin-top: 10px;
         }
          body {
             background: linear-gradient(to right, rgb(155, 136, 136), rgb(212, 163, 71));
         } 
+        .ell{
+            margin-left: 700px;
+            height: 37px;
+        }
      </style>  
 </head>
   <body>
@@ -25,8 +30,6 @@
               <div class="col s12">
                   <h1> Liste des Inscrits </h1>
                         <hr>
-                        <a href="/ajouter" class="btn btn-primary"> Ajouter un Etudiant </a>
-                        <hr>
                         @if (session('status'))
                             <div class="alert alert-success al">
                                 {{ session('status') }}
@@ -35,7 +38,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>N°</th>
                                     <th>Nom</th>
                                     <th>Prenom </th>
                                     <th>adresse-email</th>
@@ -65,9 +68,11 @@
                                 @endphp
                                 @endforeach
                             </tbody>
-                             
                         </table>
-                        {{ $etudiants->links() }}
+                        <div class="d-flex">
+                            {{ $etudiants->links() }}
+                            <a href="/ajouter" class="btn btn-primary ell"> Ajouter un Etudiant </a>
+                        </div>
                 </div>
                  
             </div>

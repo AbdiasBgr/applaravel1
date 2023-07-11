@@ -24,10 +24,12 @@
       padding: 40px 60px;
       border-radius: 10px;
       min-width: 300px;
+      width: 430px;
     } 
-    form h1{
+    form h3{
       color: #eb7371;
       text-align:center;
+  
     }
     form .social-media{
       margin-top: -10px;
@@ -99,7 +101,7 @@
   
   
   <form action="/ajouter/traitement" method="POST">
-    <h1>Formulaire Inscription</h1>
+    <h3>Formulaire Inscription</h3>
     @if (session('status'))
           <div class="alert alert-success al">
             {{ session('status') }}
